@@ -6,9 +6,10 @@ body { margin:0; padding:0; }
   	top:12px; 
   	left:60px; 
   	background-color: #FFF; 
-  	padding:10px 15px 10px 15px; 
+    padding: 10px
   	opacity:0.8;  
-  	font-family:"Georgia", serif; font-size:1em;
+  	font-family: Questrial, serif; font-size:1em;
+    line-height: 0.9em;
   }
 
   #text { 
@@ -16,8 +17,18 @@ body { margin:0; padding:0; }
   	margin-right:auto; 
   	color:#555555; 
   	opacity:1!important; 
-  	z-index:3; text-shadow:1px 1px 2px #888888
+  	z-index:3; text-shadow:1px 1px 2px #888888;
   }
+
+.title {
+  font-size:1.2em;  
+  text-transform: uppercase;
+  padding-top: 10px;
+}
+
+.subtitle {
+  font-size:0.5em;
+}
 
   #map { 
   	position:absolute; 

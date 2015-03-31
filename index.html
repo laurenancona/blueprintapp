@@ -17,6 +17,7 @@
 <script src='js/share.min.js'></script>
 <link rel="shortcut icon" href="http://laurenancona.com/LA-Icon-2014_red_favi.ico" type="image/x-icon">
 <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+<link href='http://fonts.googleapis.com/css?family=Questrial|Playfair+Display:400,400italic' rel='stylesheet' type='text/css'>
 <link href="css/style.css" type="text/css" rel='stylesheet'>
 <!--[if lt IE 9]>
   <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.21.0/L.Control.Locate.ie.css' rel='stylesheet' />
@@ -38,8 +39,8 @@
 
 
   <div id="container">
-    <span id="text" style="font-size:1.2em;">Blueprinted <br>
-      <span style="font-size:0.5em;">cyanotype-inspired map style</span>
+    <span class="title">Blueprinted <br>
+      <span class="subtitle">cyanotype-inspired map style</span>
     </span>
   </div>
 
@@ -94,7 +95,7 @@ config = {
       enabled: 'true'// Enable Pinterest. [Default: true]
     },
     email: {
-      enabled: ''// Enable Email. [Default: true]
+      enabled: 'true'// Enable Email. [Default: true]
     }
   }
 }
@@ -102,11 +103,11 @@ config = {
 var share = new Share('.sharing', config);
     
 </script>        
-<script src="https://d2g9qbzl5h49rh.cloudfront.net/static/feedback2.js?3.2.6370" type="text/javascript">
+<script src="http://d2g9qbzl5h49rh.cloudfront.net/static/feedback2.js?3.2.6370" type="text/javascript">
   new JotformFeedback({
      formId		: "50894997027168",
      buttonText	: "Order prints",
-     base		: "https://secure.jotform.us/",
+     base		: "http://jotform.us/",
      background	: "#FFFFFF",
      fontColor	: "#1E5C96",
      buttonSide	: "right",
