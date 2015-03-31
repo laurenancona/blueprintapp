@@ -10,11 +10,11 @@
 <meta name="twitter:card" content="photo" />
 <meta name="twitter:site" content="@laurenancona" />
 <meta name="twitter:creator" content="@laurenancona" />
-    
 <link rel="image_src" href="https://raw.githubusercontent.com/laurenancona/blueprinted/master/images/thumb.png"/>
 <meta property="og:description"content="Cyanotype-inspired custom map tiles" />
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
 <script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js'></script>
+<script src='js/share.min.js'></script>
 <link rel="shortcut icon" href="http://laurenancona.com/LA-Icon-2014_red_favi.ico" type="image/x-icon">
 <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
 <link href="css/style.css" type="text/css" rel='stylesheet'>
@@ -33,32 +33,20 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-W6WFRN');</script>
   <!-- End Google Tag Manager -->
+<script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.24.0/L.Control.Locate.css' rel='stylesheet' />
+
 
   <div id="container">
-    <span id="text" style="font-size:1.5em;">Blueprinted <br>
+    <span id="text" style="font-size:1.2em;">Blueprinted <br>
       <span style="font-size:0.5em;">cyanotype-inspired map style</span>
     </span>
   </div>
 
-  <div id="share-buttons">
-    <!-- Facebook -->
-    <a href="http://www.facebook.com/sharer.php?u=http://blueprintmap.org" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" width="30em" alt="Facebook" /></a>
-     
-    <!-- Twitter -->
-    <a href="http://twitter.com/share?url=http://blueprintmap.org/&text=Blueprinted: custom cyanotype-inspired map tiles" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" width="30em" alt="Twitter" /></a>
-     
-    <!-- Google+ -->
-    <a href="https://plus.google.com/share?url=http://blueprintmap.org" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/google.png" width="30em" alt="Google" /></a>
-     
-    <!-- Reddit -->
-    <a href="http://reddit.com/submit?url=http://blueprintmap.org&title=Blueprinted: custom cyanotype-inspired map tiles" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/reddit.png" width="30em" alt="Reddit" /></a>
-     
-    <!-- LinkedIn -->
-    <a href="http://www.linkedin.com/shareArticle?mini=true&url=http://blueprintmap.org" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/linkedin.png" width="30em" alt="LinkedIn" /></a>
-     
-    <!-- Email -->
-    <a href="mailto:?Subject=Blueprinted: custom cyanotype-inspired map tiles&Body=Check out this Blueprint-style map:  http://blueprintmap.org"><img src="http://www.simplesharebuttons.com/images/somacro/email.png" width="30em" alt="Email" /></a>
+  <div id="sharing">
+    
   </div>
+    
   <div id="credits">
       <p>Created by <a href="https://twitter.com/laurenancona" target="_blank">@laurenancona</a> in Philadelphia | USA
       </p>
@@ -68,16 +56,52 @@
   <div id='map'></div>
   <pre id='output' class='ui-output'></pre>
 
-  <script>
+<script>
 L.mapbox.accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6Im5EaldBcVUifQ.MTeXi8ZLmYhMBxnZ0nBG3A';
   var map = L.mapbox.map('map', 'laurenancona.lgh0leco')
     .addControl(L.mapbox.geocoderControl('mapbox.places', {
         autocomplete: true
     }));  
 
-
+    L.control.locate().addTo(map);
     
-  </script>  
+</script> 
+<script>
+config = {
+  url: 'http://blueprintmap.org',       // the url you'd like to share. [Default: `window.location.href`]
+  title: 'Blueprinted',      // title to be shared alongside your link [Default: See below in defaults section]
+  description: 'a cyanotype-inspired map style', // text to be shared alongside your link, [Default: See below in defaults section]   
+  image: 'https://raw.githubusercontent.com/laurenancona/blueprinted/master/images/thumb.png',      // image to be shared [Default: See below in defaults section]
+  ui: {
+    flyout: 'top right',           // change the flyout direction of the shares. chose from `top left`, `top center`, `top right`, `bottom left`, `bottom right`, `bottom center`, `middle left`, or `middle right` [Default: `top center`]
+  },
+  networks: {
+    google_plus: {
+      enabled: 'false',// Enable Google+. [Default: true]
+    },
+    twitter: {
+      enabled: 'true',// Enable Twitter. [Default: true]
+    },
+    facebook: {
+      enabled: 'true',// Enable Facebook. [Default: true]
+      load_sdk: 'true',// Load the FB SDK. If false, it will default to Facebook's sharer.php implementation. 
+                // NOTE: This will disable the ability to dynamically set values and rely directly on applicable Open Graph tags.
+                // [Default: true]
+      app_id: '1560183814233743',// Facebook app id for tracking shares. if provided, will use the facebook API
+      caption: 'Ever wonder what your city might look like as a blueprint?' // caption to be shared alongside your link to Facebook [Default: null]
+    },
+    pinterest: {
+      enabled: 'true'// Enable Pinterest. [Default: true]
+    },
+    email: {
+      enabled: ''// Enable Email. [Default: true]
+    }
+  }
+}
+        
+var share = new Share('.sharing', config);
+    
+</script>        
 <script src="https://d2g9qbzl5h49rh.cloudfront.net/static/feedback2.js?3.2.6370" type="text/javascript">
   new JotformFeedback({
      formId		: "50894997027168",
