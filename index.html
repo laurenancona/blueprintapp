@@ -10,7 +10,7 @@
 <link rel="image_src" href="https://raw.githubusercontent.com/laurenancona/blueprinted/master/images/thumb.png"/>
 <meta property="og:description"content="Cyanotype-inspired custom map tiles" />
 <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
-<script src='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.js'></script>
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.6/mapbox.js'></script>
 <link rel="shortcut icon" href="http://laurenancona.com/LA-Icon-2014_red_favi.ico" type="image/x-icon">
 <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
 <link href="css/style.css" type="text/css" rel='stylesheet'>
@@ -29,7 +29,26 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-W6WFRN');</script>
   <!-- End Google Tag Manager -->
-
+<style>
+  pre.ui-output {
+    display:block;
+    position:absolute;
+    bottom:10px;
+    left:10px;
+    padding:5px 10px;
+    background:rgba(0,0,0,0.5);
+    color:#fff;
+    font-size:11px;
+    line-height:18px;
+    border-radius:3px;
+    max-height:50%;
+    max-width:25%;
+    overflow:auto;
+    word-wrap: break-word;
+    white-space:pre-wrap;
+    }
+    pre.ui-output:empty { padding:0; }
+</style>
   <div id="container">
     <span id="text">Blueprinted <br>
       <span style="font-size:1.5em;">cyanotype-inspired vector tile styles</span>
@@ -65,59 +84,12 @@
  <!-- Killing this unless/until I can make responsive; too much real estate for mobile -->
     <script src='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.js'></script>
     <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-minimap/v1.0.0/Control.MiniMap.css' rel='stylesheet' />
-<style>
-    .leaflet-control-locate {
-      border:1px solid rgba(0,0,0,0.4);
-      }
-    .leaflet-control-locate a {
-      background-color:#fff;
-      background-position:-3px, -2px;
-      }
-    .leaflet-control-locate.active a {
-      background-position:-33px -2px;
-      }
-      .menu-ui {
-      background:#fff;
-      position:absolute;
-      top:10px;right:10px;
-      z-index:1;
-      border-radius:3px;
-      width:150px;
-      border:1px solid rgba(0,0,0,0.4);
-      }
-      .menu-ui a {
-        font-size:13px;
-        color:#404040;
-        display:block;
-        margin:0;padding:0;
-        padding:10px;
-        text-decoration:none;
-        border-bottom:1px solid rgba(0,0,0,0.25);
-        text-align:center;
-        }
-        .menu-ui a:first-child {
-          border-radius:3px 3px 0 0;
-          }
-        .menu-ui a:last-child {
-          border:none;
-          border-radius:0 0 3px 3px;
-          }
-        .menu-ui a:hover {
-          background:#f8f8f8;
-          color:#404040;
-          }
-        .menu-ui a.active {
-          background:#3887BE;
-          color:#FFF;
-          }
-          .menu-ui a.active:hover {
-            background:#3074a4;
-            }
-    </style>
+
   
 
   <nav id='menu-ui' class='menu-ui'></nav> 
   <div id='map'></div>
+<pre id='output' class='ui-output'></pre>
 
   <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6Im5EaldBcVUifQ.MTeXi8ZLmYhMBxnZ0nBG3A';
