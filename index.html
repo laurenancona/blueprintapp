@@ -29,29 +29,10 @@
     '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
     })(window,document,'script','dataLayer','GTM-W6WFRN');</script>
   <!-- End Google Tag Manager -->
-<style>
-  pre.ui-output {
-    display:block;
-    position:absolute;
-    bottom:10px;
-    left:10px;
-    padding:5px 10px;
-    background:rgba(0,0,0,0.5);
-    color:#fff;
-    font-size:11px;
-    line-height:18px;
-    border-radius:3px;
-    max-height:50%;
-    max-width:25%;
-    overflow:auto;
-    word-wrap: break-word;
-    white-space:pre-wrap;
-    }
-    pre.ui-output:empty { padding:0; }
-</style>
+
   <div id="container">
-    <span id="text">Blueprinted <br>
-      <span style="font-size:1.5em;">cyanotype-inspired vector tile styles</span>
+    <span id="text" style="font-size:1.5em;">Blueprinted <br>
+      <span style="font-size:0.7em;">cyanotype-inspired custom map style</span>
     </span>
   </div>
 
@@ -94,19 +75,10 @@
   <script>
 L.mapbox.accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6Im5EaldBcVUifQ.MTeXi8ZLmYhMBxnZ0nBG3A';
   var map = L.mapbox.map('map', 'laurenancona.lgh0leco')
-  var output = document.getElementById('output');
-  
+    .addControl(L.mapbox.geocoderControl('mapbox.places', {
+        autocomplete: true
+    }));  
 
-// Initialize the geocoder control and add it to the map.
-var geocoderControl = L.mapbox.geocoderControl('mapbox.places');
-geocoderControl.addTo(map);
-
-// Listen for the `found` result and display the first result
-// in the output container. For all available events, see
-// https://www.mapbox.com/mapbox.js/api/v2.1.6/l-mapbox-geocodercontrol/#section-geocodercontrol-on
-geocoderControl.on('found', function(res) {
-    output.innerHTML = JSON.stringify(res.results.features[0]);
-});
 
     
   </script>  
