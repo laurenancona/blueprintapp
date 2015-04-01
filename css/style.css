@@ -43,13 +43,29 @@ body { margin:0; padding:0; }
   	margin-left: 10px;
   }
 
-  #sharing { 
-  	position:relative; 
-  	float:right; 
-  	z-index:4; 
-  	top:.9em; 
-  	right:1.5em;
+  .sharing { 
+      margin: 10px 10px 10px 91%;
+      float: right;
+      position: absolute; 
+      top: 20px; 
+      left: 0; 
+      bottom: 0; 
+      right: 0; 
+      z-index: 100; 
   }
+
+// Main button, icon, and text styles
+.share-button.sharer-0 label {
+  -webkit-transition: all .3s ease;
+  transition:         all .3s ease;
+  background: #fff;
+  border-radius: 5px;
+  color: #333;
+  cursor: pointer;
+  font-size: 16px;
+  margin: 0;
+  padding: 5px 10px;
+}
 
   .img { 
   	width:20px;
