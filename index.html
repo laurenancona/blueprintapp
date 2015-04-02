@@ -17,6 +17,7 @@
     <script src='js/share.min.js'></script>
     <link rel="shortcut icon" href="http://laurenancona.com/LA-Icon-2014_red_favi.ico" type="image/x-icon">
     <link href='https://api.tiles.mapbox.com/mapbox.js/v1.6.4/mapbox.css' rel='stylesheet' />
+    <link href='http://fonts.googleapis.com/css?family=Raleway:700,400' rel='stylesheet' type='text/css'>
     <link href="css/style.css" type="text/css" rel='stylesheet'>
     <!--[if lt IE 9]>
       <link href='https://api.tiles.mapbox.com/mapbox.js/plugins/leaflet-locatecontrol/v0.21.0/L.Control.Locate.ie.css' rel='stylesheet' />
@@ -48,11 +49,12 @@
 <!--  Puff, puff, give  -->
     <div class="sharing"></div>
 
-<!--  Give it up  -->    
+<!--  Give it up      
     <div id="credits">
         <p>Created by <a href="https://twitter.com/laurenancona" target="_blank">@laurenancona</a> in Philadelphia | USA
         </p>
     </div>
+-->
 
     <nav id='menu-ui' class='menu-ui'></nav> 
     <div id='map'></div>
@@ -77,32 +79,33 @@
       ui: {
         flyout: 'bottom left', // change the flyout direction of the shares. chose from `top left`, `top center`, `top right`, `bottom left`, `bottom right`, `bottom center`, `middle left`, or `middle right` [Default: `top center`]
       },
-        button_text:'',    // change the text of the button, [Default: `Share`]
+        button_text: null, // change the text of the button, [Default: `Share`]
         networks: {
         google_plus: {
-          enabled: 'false',// Enable Google+. [Default: true]
+          enabled: 'false', // Enable Google+. [Default: true]
         },
         twitter: {
-          enabled: 'true',// Enable Twitter. [Default: true]
+          enabled: 'true', // Enable Twitter. [Default: true]
         },
         facebook: {
-          enabled: 'true',// Enable Facebook. [Default: true]
-          load_sdk: 'true',// Load the FB SDK. If false, it will default to Facebook's sharer.php implementation. 
+          enabled: 'true', // Enable Facebook. [Default: true]
+          load_sdk: 'true', // Load the FB SDK. If false, it will default to Facebook's sharer.php implementation. 
                     // NOTE: This will disable the ability to dynamically set values and rely directly on applicable Open Graph tags.
                     // [Default: true]
          // app_id: '1560183814233743',// Facebook app id for tracking shares. if provided, will use the facebook API
           caption: 'Ever wonder what your city might look like as a blueprint?' // caption to be shared alongside your link to Facebook [Default: null]
         },
         pinterest: {
-          enabled: 'true'// Enable Pinterest. [Default: true]
+          enabled: 'true' // Enable Pinterest. [Default: true]
         },
         email: {
-          enabled: 'true'// Enable Email. [Default: true]
+          enabled: 'true' // Enable Email. [Default: true]
         }
       }
     }
 
     var share = new Share('.sharing', config);
+    
 </script>        
     <script src="http://d2g9qbzl5h49rh.cloudfront.net/static/feedback2.js?3.2.6370" type="text/javascript">
       new JotformFeedback({
