@@ -79,17 +79,17 @@
       ui: {
         flyout: 'top right', // change the flyout direction of the shares. chose from `top left`, `top center`, `top right`, `bottom left`, `bottom right`, `bottom center`, `middle left`, or `middle right` [Default: `top center`]
       },
-        button_text: null, // change the text of the button, [Default: `Share`]
+        button_text: 'null', // change the text of the button, [Default: `Share`]
         networks: {
         google_plus: {
-          enabled: 'false', // Enable Google+. [Default: true]
+          enabled: false, // Enable Google+. [Default: true]
         },
         twitter: {
           enabled: 'true', // Enable Twitter. [Default: true]
         },
         facebook: {
           enabled: 'true', // Enable Facebook. [Default: true]
-          load_sdk: 'true', // Load the FB SDK. If false, it will default to Facebook's sharer.php implementation. 
+          load_sdk: false, // Load the FB SDK. If false, it will default to Facebook's sharer.php implementation. 
                     // NOTE: This will disable the ability to dynamically set values and rely directly on applicable Open Graph tags.
                     // [Default: true]
          // app_id: '1560183814233743',// Facebook app id for tracking shares. if provided, will use the facebook API
