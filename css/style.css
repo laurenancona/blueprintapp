@@ -132,3 +132,15 @@ pre.ui-output {
 .leaflet-control-locate.active a {
   background-position:-33px -2px;
   }
+.btn {
+  font-family: Arial;
+  color: #074b70;
+  font-size: 11px;
+  background: #c0d934;
+  padding: 6px 9px 7px 10px;
+  bottom: 10px;
+  height: 60px;
+  width: 100px;
+  text-decoration: none;
+  z-index: 100;
+}
