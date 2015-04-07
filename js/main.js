@@ -1,4 +1,4 @@
-// Leaflet Junk
+// Leaflet Sundries
 L.mapbox.accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6Im5EaldBcVUifQ.MTeXi8ZLmYhMBxnZ0nBG3A';
 var map = L.mapbox.map('map', 'laurenancona.lgh0leco')
     .setView([38.9, -77.0], 15)
@@ -7,6 +7,13 @@ var map = L.mapbox.map('map', 'laurenancona.lgh0leco')
     }))
 L.control.locate().addTo(map);
 var hash = L.hash(map);
+
+// Dat attribution, doe
+// Add customized attribution, not repeating "Mapbox" (we already have a logo on there).
+var attribution = L.control.attribution();
+attribution.setPrefix('');
+attribution.addAttribution('<a href="http://openstreetmap.org/copyright">Map data: © OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+attribution.addTo(map);
 
 // Sharing Methods
 var share = new Share('.sharing', {
