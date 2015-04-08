@@ -1,6 +1,6 @@
 // Leaflet Sundries
 L.mapbox.accessToken = 'pk.eyJ1IjoibGF1cmVuYW5jb25hIiwiYSI6Im5EaldBcVUifQ.MTeXi8ZLmYhMBxnZ0nBG3A';
-var map = L.mapbox.map('map', 'laurenancona.lgh0leco')
+var map = L.mapbox.map('map', 'laurenancona.lgh0leco', {infoControl: false, attributionControl: false})
     .setView([38.9, -77.0], 15)
     .addControl(L.mapbox.geocoderControl('mapbox.places', {
         autocomplete: true
@@ -8,11 +8,10 @@ var map = L.mapbox.map('map', 'laurenancona.lgh0leco')
 L.control.locate().addTo(map);
 var hash = L.hash(map);
 
-// Dat attribution, doe
-// Add customized attribution, not repeating "Mapbox" (we already have a logo on there).
+// Dat attribution, doe, not repeating "Mapbox" (we already have a logo on there).
 var attribution = L.control.attribution();
 attribution.setPrefix('');
-attribution.addAttribution('<a href="http://openstreetmap.org/copyright">Map data: © OpenStreetMap</a> | <a href="http://mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
+attribution.addAttribution('<a href="//twitter.com/laurenancona">Lauren Ancona </a><a href="//openstreetmap.org/copyright">© OpenStreetMap</a> | <a href="//mapbox.com/map-feedback/" class="mapbox-improve-map">Improve this map</a>');
 attribution.addTo(map);
 
 // Sharing Methods
@@ -20,9 +19,9 @@ var share = new Share('.sharing', {
     url: 'http://blueprintmap.org', // the url you'd like to share. [Default: `window.location.href`]
     title: 'Blueprinted', // title to be shared alongside your link [Default: See below in defaults section]
     description: 'a cyanotype-inspired map style', // text to be shared alongside your link, [Default: See below in defaults section]
-    image: 'https://raw.githubusercontent.com/laurenancona/blueprinted/master/images/thumb.png', // image to be shared [Default: See below in defaults section]
+    image: 'img/thumb.png', // image to be shared [Default: See below in defaults section]
     ui: {
-        flyout: 'top right', // change the flyout direction of the shares. chose from `top left`, `top center`, `top right`, `bottom left`, `bottom right`, `bottom center`, `middle left`, or `middle right` [Default: `top center`]
+        flyout: 'bottom center' // change the flyout direction of the shares. chose from `top left`, `top center`, `top right`, `bottom left`, `bottom right`, `bottom center`, `middle left`, or `middle right` [Default: `top center`]
     },
     button_text: null, // change the text of the button, [Default: `Share`]
     networks: {
